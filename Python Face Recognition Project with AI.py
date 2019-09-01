@@ -1,7 +1,6 @@
 import face_recognition
 from PIL import Image, ImageDraw
 # Call any function in this code manually.
-
 def FaceCount(path):
     image = face_recognition.load_image_file(path)
     face_locations = face_recognition.face_locations(image)
@@ -26,7 +25,7 @@ def Similarity(path1, path2):
     results = face_recognition.compare_faces([person1_encoding], person2_encoding)
     print(results)
 
-
+# Make sure to put the correct known face names according to encodings of faces. The first encoding in the path will be "Bill Gates" and then "Steve Jobs" in this case, if their faces are encoded.
 def Identify(Known1, Known2, TestPath):
     person1_image = face_recognition.load_image_file(Known1)
     person2_image = face_recognition.load_image_file(Known2)
